@@ -1,0 +1,45 @@
+# llms-config.yaml
+
+version: 1.0  # Add versioning for configuration management
+
+# Define datasets with different sources
+Dataset:
+  pytorch:  # Placeholder for PyTorch dataset configuration
+    # Example: 'torchvision.datasets.CIFAR10'
+  huggingface:  # Placeholder for Hugging Face dataset configuration
+    # Example: 'wikitext', 'wikitext-2-raw-v1'
+  path:  # Local path to the dataset
+    # Example: '/data/datasets/wikitext-2/'
+
+# Define different LLM configurations
+LLMS:
+  device: #Device details for training
+    #Example: CPU(Default), GPU, Metal(Pytorch Nightly)
+  llm1:
+    tokenization:  # Tokenization details for llm1
+      # Example: 'bert-base-uncased'
+    train:  # Training configuration for llm1
+      # Example: epochs: 10, batch_size: 32, learning_rate: 0.001
+
+  llm2:
+    tokenization:  # Tokenization details for llm2
+      # Example: 'gpt-2'
+    train:  # Training configuration for llm2
+      # Example: epochs: 5, batch_size: 16, learning_rate: 0.0001
+
+# Define evaluation metrics
+Evaluations:
+  metrics:
+    - ROUGE-1
+    - ROUGE-L
+
+# Define deployment options
+Deployments:
+  type:
+    - AWS
+    - Azure
+    - GCP
+    - Docker
+
+# Add any additional configurations or placeholders as needed
+# For example, you might want to specify model saving paths, logging configurations, etc.
